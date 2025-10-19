@@ -134,7 +134,12 @@ const Home = () => {
     // Initialize Materialize carousel
     const carouselElement = document.querySelector(".carousel");
     if (carouselElement && window.M) {
-      window.M.Carousel.init(carouselElement, {});
+      window.M.Carousel.init(carouselElement, {
+        onCycleTo: (slide) => {
+          const index = Array.from(carouselElement.children).indexOf(slide);
+          setCurrentEvent(events[index]);
+        },
+      });
     }
   }, []);
 
