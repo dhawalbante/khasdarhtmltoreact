@@ -1,0 +1,877 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amita:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #ff3700;
+}
+
+body {
+  background: transparent;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 100px;
+  z-index: 10;
+  background: transparent !important; /* ensures no black strip */
+}
+
+
+.logo {
+  font-size: 40px;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  height: 100px; /* Match your logo image height */
+  margin-left: -50px;
+}
+
+.logo img {
+  height: 100px;
+  width: auto;
+  display: block;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav li {
+  list-style: none;
+  margin: 0 10px;
+}
+
+.nav li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav li:hover a {
+  color: var(--primary);
+}
+
+.search {
+  position: relative;
+  width: 300px;
+  height: 40px;
+}
+
+.search input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 2555, 0.5);
+  outline: none;
+  border-radius: 4px;
+  padding: 0 10px 0 45px !important;
+  backdrop-filter: blur(10px);
+}
+
+.search input::placeholder {
+  color: #ffffff;
+}
+
+.search .fa-search {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  padding-right: 10px;
+  color: #ffffff;
+  border-right: 1px solid #ffffff;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background: url('./assets/ksm_bg.mp4') no-repeat; */
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+
+
+.banner::before {
+  background: transparent;
+}
+
+.content {
+  position: relative;
+  max-width: 550px;
+  display: none;
+  visibility: hidden;
+  transform: scale(0);
+  transition: 0.5s;
+  margin-right: 40px;
+  margin-left: -50px;
+}
+
+.content.active {
+  display: block;
+  visibility: visible;
+  transform: scale(1);
+  transition: 0.5s;
+}
+
+.content .movie-title {
+    max-width: none;
+    height: auto;
+    /* font-family: "Amita", "cursive";  */
+    font-size: 2.3em; 
+    font-weight: 700;
+    color: white; 
+    line-height: 1.1;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.content .mar-title {
+  font-family: "Amita", "cursive"; 
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.content .small-title {
+  font-size: 1.7em; 
+}
+
+.instructions {
+  font-size: 13px; /* smaller font */
+  color: #ddd; /* light text to match theme */
+  margin-top: 20px;
+  line-height: 1.8;
+  /* text-align: center;  */
+  /* font-style: italic;  */
+}
+
+
+.content .program-details {
+    /* Remove default list styling */
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 30px; /* Space below the list before buttons */
+}
+
+.content .program-details li {
+    /* Space between each bullet point */
+    margin-bottom: 10px;
+    /* Ensure text color stands out against the video background */
+    color: white; 
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.content .program-details li i {
+    /* Style for the icons */
+    margin-right: 10px;
+    color: white; /* Ensure icons are visible */
+    font-size: 1.2em; /* Slightly larger than text for emphasis */
+}
+
+.banner .content h4 {
+  color: rgba(255, 255, 2555, 0.5);
+  font-weight: 400;
+  font-size: 30px;
+}
+
+.banner .content h4 span {
+  padding: 0 10px;
+  border-right: 1px solid rgba(255, 255, 2555, 0.5);
+}
+
+.banner .content h4 span:first-child {
+  padding-left: 0;
+}
+
+.banner .content h4 span:last-child {
+  border-right: 0;
+}
+
+.banner .content h4 span i {
+  background: var(--primary);
+  color: #ffffff;
+  padding: 0 8px;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.banner .content p {
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.5em;
+  color: #ffffff;
+  margin: 10px 0 20px;
+}
+
+.banner .content .button {
+  position: relative;
+}
+
+.banner .content .button a {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  background: var(--primary);
+  color: #ffffff;
+  padding: 6px 20px;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.banner .content .button a:nth-child(2) {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 2555, 0.2);
+}
+
+.banner .content .button a:hover:nth-child(2) {
+  background: var(--primary);
+}
+
+.banner .carousel-box {
+  position: relative;
+  min-width: 800px;
+  height: 65vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 2555, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.carousel {
+  position: relative;
+  height: 550px;
+  margin-top: 40px;
+  perspective: 1500px;
+  display: flex;
+  /* gap: 10px; */
+}
+.carousel .carousel-item {
+  width: 250px;
+  cursor: pointer;
+  gap: 30px;
+}
+.carousel .carousel-item img {
+  max-width: 235px;
+  border-radius: 10px;
+  transform: translateX(8px) translateY(-100px);
+  object-fit: cover;
+  object-position: center;
+}
+
+.play {
+  position: absolute;
+  bottom: 50px;
+  left: 100px;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 1.2em;
+  cursor: pointer !important;
+  transition: 0.3s;
+}
+
+.play i {
+  margin-right: 10px;
+  font-size: 40px;
+  cursor: pointer !important;
+}
+
+.play:hover {
+  color: var(--primary);
+}
+
+.trailer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(20px);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.trailer.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.trailer video {
+  max-width: 900px;
+  outline: none;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  filter: invert(1);
+  max-width: 32px;
+}
+
+/* .sci {
+  position: absolute;
+  top: 80%;
+  right: 30px;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+} */
+
+.sci a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 25px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.sci a:hover {
+  color: var(--primary);
+}
+
+.developed-by {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  color: #fff;
+  font-size: 16px;
+  opacity: 0.8;
+  letter-spacing: 1px;
+  z-index: 1000;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-start; /* or center / space-between */
+  align-items: center;
+  gap: 15px; /* controls spacing between buttons */
+}
+
+.button-group .button {
+  background-color: var(--primary); /* your orange/red color */
+  color: white;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  /* font-weight: bold; */
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* space between icon and text */
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.button-group .button:hover {
+  background-color: #e86d4e;
+}
+
+
+
+
+/* Hamburger icon */
+.hamburger {
+  cursor: pointer;
+  font-size: 28px;
+  color: white;
+  margin-left: 15px;
+  z-index: 2000;
+  transition: transform 0.3s ease;
+}
+
+.hamburger:hover {
+  transform: scale(1.1);
+}
+
+/* Side Menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -250px; /* hidden initially */
+  width: 250px;
+  height: 100vh;
+  /* background: linear-gradient(to bottom, #f2bea6, #ffd2bd); */
+  background: #fef9f2;
+  backdrop-filter: blur(10px);
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+  transition: right 0.4s ease;
+  z-index: 1500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.side-menu.active {
+  right: 0; /* Slide in */
+}
+
+/* Close button */
+.side-menu .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 30px;
+  color: #000000;
+}
+
+/* Menu links */
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+.side-menu ul li {
+  margin: 20px 30px;
+  text-align: left;
+
+}
+
+.side-menu ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.side-menu ul li a:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+/* Keep hamburger always visible */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-button {
+    /* Basic Button Styling to match typical header elements */
+    color: white; /* Choose your desired text color */
+    background-color: var(--primary);
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: 600;
+    white-space: nowrap; /* Prevents text wrap */
+    transition: background-color 0.3s;
+}
+
+.header-button:hover {
+    background-color: #e04848; /* Darker red on hover */
+}
+
+.header-button i {
+    margin-right: 5px; /* Spacing between icon and text */
+}
+
+/* Ensure social icons and menu align well */
+header .sci {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.right-icons {
+  position: absolute;
+  top: 40%;
+  right: 30px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 15px; /* space between social icons and hamburger */
+  z-index: 2000;
+}
+
+/* Adjust .sci since it's now inside .right-icons */
+.right-icons .sci {
+  position: static;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Keep hamburger style consistent */
+.right-icons .hamburger {
+  cursor: pointer;
+  font-size: 28px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.right-icons .hamburger:hover {
+  transform: scale(1.1);
+}
+
+
+
+@media (max-width: 991px) {
+  header {
+    padding: 20px 50px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* center logo + nav */
+  }
+
+  .logo {
+    margin-right: 600px; 
+  }
+
+  header .nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px 0;
+  }
+
+  .banner {
+    padding: 100px 30px;
+  }
+
+  .banner .play {
+    left: 30px;
+    font-size: 1em;
+  }
+
+  .play img {
+    margin-right: 10px;
+    max-width: 40px;
+  }
+
+  .trailer video {
+    max-width: 90%;
+  }
+
+  /* --- Carousel Fix --- */
+  .banner .carousel-box {
+    min-width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    height: 50vh;
+  }
+
+  .carousel {
+    height: 400px;
+  }
+
+  .carousel .carousel-item img {
+    max-width: 180px;
+    transform: translateY(-40px);
+    }
+}
+
+
+@media (max-width: 600px) {
+  header {
+    padding: 20px;
+  }
+
+  .search {
+    position: relative;
+    width: 250px;
+    height: 40px;
+  }
+
+  .logo {
+  margin-right: 200px;
+  }
+
+  .banner {
+    padding: 120px 30px 100px;
+    flex-direction: column;
+  }
+
+  .banner .content {
+    margin-top: 50%; 
+    margin-left: -30px; 
+  }
+
+  .movie-title {
+    max-width: 150px;
+  }
+
+  .banner .content h4 {
+    font-weight: 300;
+    font-size: 20px;
+  }
+
+  .banner .content p {
+    font-size: 10px;
+    font-weight: 200;
+    line-height: 1.2em;
+  }
+
+  .banner .carousel-box {
+    max-width: 450px;
+    max-height: 300px;
+  }
+
+  .carousel {
+    position: relative;
+    height: 280px;
+    perspective: 1500px;
+  }
+
+  .carousel .carousel-item {
+    margin-top: -20px;
+    width: 150px;
+    cursor: pointer;
+  }
+
+  .carousel .carousel-item img {
+    max-width: 140px;
+    border-radius: 10px;
+    transform: translateX(0) translateY(0);  /* reset translation */
+    object-fit: cover;
+    object-position: center;
+    /* margin: 0 auto;   horizontally center */
+    display: block;
+}
+
+
+  .banner .play {
+    left: 30px;
+    bottom: 30px;
+  }
+
+  .banner .sci {
+    right: 30px;
+    bottom: 30px;
+    gap: 15px;
+  }
+
+
+  /* 1. Set the right-icons container to stack elements vertically */
+    .right-icons {
+        display: flex;
+        flex-direction: column; /* Stack children vertically */
+        align-items: flex-end; /* Align elements to the right */
+    }
+
+    /* 2. Top Row Group (Social Icons + Hamburger) */
+    .top-row-icons {
+        display: flex; /* Make them align horizontally */
+        align-items: center;
+        order: 0; /* Keep them at the top */
+    }
+    
+    /* Ensure social icons are visible and spaced */
+    .top-row-icons .sci {
+        display: flex;
+        padding: 0;
+        margin: 0 10px 0 0; /* Space from the hamburger */
+        gap: 10px;
+        list-style: none;
+       margin-top: 30px;
+    }
+
+    .top-row-icons .hamburger {
+      margin-top: 30px;
+
+    }
+
+    /* 3. Media Center Button (Bottom Row) */
+    .header-button.press-button {
+        order: 1; /* Move it below the top-row-icons group */
+        margin-top: 10px; /* Space above the button */
+        width: 100%; 
+        max-width: 150px; 
+        text-align: center;
+    }
+  
+}
+
+#background-video {
+  position: fixed; /* Fixes the video in relation to the viewport */
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -10; /* Important: Puts the video behind all other content */
+  transform: translate(-50%, -50%); /* Centers the video */
+  object-fit: cover; /* Ensures the video covers the entire screen */
+}
+
+
+/* 🔹 Show hamburger only on smaller screens */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: inline-block;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .sci {
+    display: flex;
+    gap: 10px;
+  }
+    header {
+    padding: 20px;
+  }
+
+  .search {
+    position: relative;
+    width: 250px;
+    height: 40px;
+  }
+
+  .logo {
+  margin-right: 200px;
+  }
+
+  .banner {
+    padding: 120px 30px 100px;
+    flex-direction: column;
+  }
+
+  .banner .content {
+    margin-top: -0.5%;
+    margin-left: 10px;
+  }
+
+  .movie-title {
+    max-width: 150px;
+  }
+
+  .banner .content h4 {
+    font-weight: 300;
+    font-size: 20px;
+  }
+
+  .banner .content p {
+    font-size: 10px;
+    font-weight: 200;
+    line-height: 1.2em;
+  }
+
+ .developed-by {
+  position: relative;
+  right: 0;
+  bottom: 30px;
+  color: #fff;
+  font-size: 16px;
+  opacity: 0.8;
+  letter-spacing: 1px;
+  text-align: center;
+  width: 100%;
+}
+
+}
+
+
+
+
+/* For Desktop and Tablet Views */
+@media (min-width: 601px) {
+  .right-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    position: absolute;
+    top: 40%;
+    right: 30px;
+    transform: translateY(-50%);
+  }
+
+  .right-icons .header-button {
+    margin: 0;
+    padding: 8px 16px;
+    font-size: 0.9em;
+    order: 0;
+  }
+
+  .right-icons .top-row-icons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    order: 1;
+  }
+
+  .right-icons .top-row-icons .sci {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+  }
+
+  .right-icons .hamburger {
+    font-size: 26px;
+    order: 2;
+    cursor: pointer;
+  }
+}

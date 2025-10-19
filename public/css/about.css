@@ -1,0 +1,330 @@
+
+/* Base Styles and Setup */
+:root {
+  --primary-color: rgb(252, 63, 63);
+   --font-main: 'Inter', sans-serif;
+  --text-dark: #333;
+  --text-medium: #444;
+  --text-light: #555;
+   --bg-light: #fef9f2;
+  --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --shadow-strong: 0 10px 20px rgba(0, 0, 0, 0.1);
+   --border-radius: 15px;
+}
+
+
+
+        body {
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-medium);
+        }
+
+        /* Utility Class for Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER (Simple placeholder) */
+        /* header {
+            background-color: #fff;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--primary-color);
+        } */
+
+        /* KSM Section Styling */
+        #about-ksm-section {
+            padding: 150px 10px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 1. Text and Info Column Styling */
+        .text-and-info-column {
+            flex: 2; /* Takes up more space than the image column */
+        }
+
+        .overline {
+            font-size: 0.85em;
+            color: var(--text-light);
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-top: 0;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            font-weight: 800; /* Extra bold */
+            color: var(--text-dark);
+        }
+
+        .highlight {
+            color: var(--primary-color);
+        }
+
+        .text-and-info-column p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* 2. Info Boxes (WHERE/WHEN) Styling */
+        .info-boxes-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap; 
+        }
+
+        .info-box {
+            flex: 1; /* Makes them share space equally */
+            min-width: 250px;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft); 
+            border: 1px solid #eee;
+            transition: transform 0.2s;
+        }
+
+        .info-box:hover {
+            transform: translateY(-3px); /* subtle hover effect */
+        }
+
+        .icon-circle {
+            background-color: var(--primary-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+        }
+
+        .icon {
+            font-size: 1.5em;
+            color: #ffffff;
+        }
+
+        .info-label {
+            font-size: 0.85em;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 2px;
+            text-transform: uppercase;
+        }
+
+        .info-value {
+            font-size: 1.05em;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        /* 3. Image Column Styling (Desktop/Tablet) - UPDATED FOR SINGLE IMAGE */
+        .image-column {
+            flex: 1; 
+            min-width: 300px; /* Ensure it doesn't get too small */
+            display: flex; /* Use flexbox to center image vertically if needed */
+            align-items: center; /* Vertically align the image */
+            justify-content: center; /* Horizontally align the image */
+        }
+
+        .image-column img {
+            width: 110%;
+            height: auto; 
+            max-height: 450px; 
+            border-radius: var(--border-radius); 
+            object-fit: cover;
+            box-shadow: var(--shadow-strong);
+        }
+
+
+        header .sci a {
+            color: var(--primary-color) !important; 
+        }
+
+        .sci a:hover {
+            color: black !important; 
+        }
+
+          header .hamburger i {
+            color: var(--primary-color) !important;
+        }
+
+
+             #visionary-section {
+            background-color: var(--bg-light); /* Use a white background for contrast */
+            padding: -700px;
+        }
+        
+        .visionary-content {
+            display: flex;
+            max-width: 1000px; /* Slightly narrower content box */
+            margin: 0 auto;
+            align-items: flex-start;
+            gap: 50px;
+            /* border: 2px solid var(--primary-color); */
+            padding: 50px;
+        }
+
+        .visionary-image-box {
+            flex-shrink: 0; /* Prevent image from shrinking */
+            width: 40%;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .visionary-image-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 0; /* REMOVED rounded corners on the image */
+            box-shadow: none; /* REMOVED box shadow */
+        }
+
+        .visionary-text-content {
+            flex-grow: 1;
+            padding-left: 0; /* Adjusted padding to tighten spacing */
+            line-height: 1.8;
+            color: var(--text-dark);
+            font-size: 1.1em; /* Slightly larger text */
+        }
+
+        .visionary-text-content p {
+            margin-bottom: 40px;
+        }
+
+        .visionary-signature {
+            text-align: right;
+            /* Removed border-top since the original image doesn't have it */
+            padding-top: 0; 
+            margin-top: 40px;
+        }
+
+        .visionary-signature .visionary-subtitle {
+            display: block; /* Makes it take up its own line */
+            font-size: 1em; /* Adjust to match the size */
+            color: #6d6d6d; /* Lighter grey color */
+            margin-bottom: 5px; /* Space between subtitle and name */
+        }
+        
+        /* Added horizontal line before signature block for visual separation */
+        .visionary-text-content::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: transparent; /* Keeping it transparent, but could be useful for debugging */
+            margin-bottom: 10px; /* Spacing before the text */
+        }
+        
+        .visionary-signature strong {
+            display: block;
+            font-size: 1.25em;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .visionary-signature small {
+            font-size: 0.9em;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        /* ------------------------------------------- */
+        /* Media Queries adjustments */
+        /* ------------------------------------------- */
+
+        /* Tablet/Desktop Visionary Layout adjustment */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .visionary-content {
+                gap: 30px;
+                padding: 40px;
+            }
+            .visionary-image-box {
+                width: 35%;
+            }
+        }
+
+        
+        @media (max-width: 768px) {
+            #about-ksm-section {
+                padding: 110px 0;
+            }
+
+            .content-wrapper {
+                flex-direction: column; /* STACK COLUMNS VERTICALLY */
+                gap: 30px; 
+            }
+
+            /* Text and Info Column */
+            .text-and-info-column, .image-column {
+                flex: none; 
+                width: 100%;
+                padding: 0 20px; /* Re-apply padding here for text alignment */
+            }
+            
+            h1 {
+                font-size: 1.8em; /* Smaller heading on mobile */
+                margin-bottom: 15px;
+            }
+
+            /* Info Boxes (WHERE/WHEN) Stacking */
+            .info-boxes-container {
+                flex-direction: column; /* STACK INFO BOXES VERTICALLY */
+                gap: 15px;
+            }
+
+            .info-box {
+                min-width: 100%; 
+                padding: 15px;
+            }
+
+            /* Single Image adjustments for mobile */
+            .image-column img {
+                max-height: 300px; /* Adjust max height for smaller screens */
+            }
+
+            .visionary-content {
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                /* border: 2px solid var(--primary-color); */
+            }
+
+            .visionary-image-box {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .visionary-text-content {
+                padding-left: 0;
+            }
+            
+            /* Reset mobile alignment to be consistent */
+            .visionary-signature {
+                text-align: left;
+            }
+        }
+  
